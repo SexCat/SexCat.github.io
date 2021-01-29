@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="渗透测试、红蓝对抗">
-    <meta name="description" content="Hexo Theme Keep">
+    <meta name="description" content="Web安全、内网安全、二进制">
     <meta name="author" content="VV">
     
     <title>
-        
-            Hello World |
         
         BigDao&#39;s Blog
     </title>
@@ -171,7 +169,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Hello World</span>
+            <span class="title-hover-animation"></span>
         </div>
 
         
@@ -189,7 +187,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-01-29 13:37:15
+        <i class="fas fa-edit"></i>&nbsp;2021-01-29 19:13:24
     </span>
     
     
@@ -210,20 +208,56 @@
         
 
         <div class="article-content markdown-body">
-            <p>Welcome to <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+            <h1 id="Java基础（二）"><a href="#Java基础（二）" class="headerlink" title="Java基础（二）"></a>Java基础（二）</h1><h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>程序要求参与的计算的数据，必须要保证数据类型的一致性，如果数据类型不一致将会发生类型的转换。</p>
+<h3 id="自动转换"><a href="#自动转换" class="headerlink" title="自动转换"></a>自动转换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 1;</span><br><span class="line">byte b &#x3D; 2;</span><br></pre></td></tr></table></figure>
+<p><strong>自动转换：将取值范围小的类型，自动提升为取值范围大的类型。</strong></p>
+<p><strong>转换规则：byte、short、char–&gt;int–&gt;long–&gt;float–&gt;double</strong></p>
+<h3 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h3><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><h2 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h2><p>解释：将一个功能抽取出来，把代码单独定义于一个大括号内，形成一个单独的功能。</p>
+<h3 id="方法的定义："><a href="#方法的定义：" class="headerlink" title="方法的定义："></a>方法的定义：</h3><p>修饰符 返回值类型 方法名 （参数列表）{</p>
+<p>​            代码…</p>
+<p>​            return;</p>
+<p>}</p>
+<h3 id="方法的调用："><a href="#方法的调用：" class="headerlink" title="方法的调用："></a>方法的调用：</h3><p>直接写方法的名称即可。</p>
 
         </div>
 
         
 
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/01/29/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/01/29/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
         
 
         

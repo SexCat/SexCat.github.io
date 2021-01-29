@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="渗透测试、红蓝对抗">
+    <meta name="description" content="Web安全、内网安全、二进制">
+    <meta name="author" content="VV">
+    
+    <title>
+        
+        BigDao&#39;s Blog
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"EveryThing Will Be Fine."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                BigDao&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation"></span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">VV</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-01-29 19:13:24
+    </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Java基础（一）"><a href="#Java基础（一）" class="headerlink" title="Java基础（一）"></a>Java基础（一）</h1><p><strong>内容来自廖雪峰老师官网学习笔记</strong></p>
+<h2 id="Java版本"><a href="#Java版本" class="headerlink" title="Java版本"></a>Java版本</h2><p>Java SE：Standard Edition</p>
+<p>Java EE：Enterprise Edition</p>
+<p>Java Me：Micro Edition</p>
+<p>SE翻译为标准版，包含标准的Jvm和标准库，EE为企业版，在SE上增加了大量的API和库，SE和EE使用的虚拟机相同。</p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>JDK：Java development kit</p>
+<p>JRE：Java Runtime Environment</p>
+<p>JRE就是运行java字节码的虚拟机，如果只有java源码，要编译成Java字节码，就需要JDK，因为JDK除了包含JRE，还提供了编译器，调试器等开发工具。</p>
+<h2 id="JDK安装以及环境变量"><a href="#JDK安装以及环境变量" class="headerlink" title="JDK安装以及环境变量"></a>JDK安装以及环境变量</h2><p>Windows：</p>
+<p>Java_HOME只想JDK安装目录</p>
+<p>Mac：</p>
+<p>.bash_profile 或.zprofile</p>
+<p>把Java_HOME目录的Bin添加到系统环境变量PATH中</p>
+<p>Path=%Java_HOME%\bin</p>
+<p>Classpath</p>
+<p>.,%Java_HOME%\bin\dt.jar;%Java_HOME%\lib\tools.jar</p>
+<h2 id="JDK下bin目录文件"><a href="#JDK下bin目录文件" class="headerlink" title="JDK下bin目录文件"></a>JDK下bin目录文件</h2><p>Java：这个可执行程序其实就是JVM，运行Java程序，就是启动JVM，然后让JVM执行指定的编译后的代码；</p>
+<p>Javac：这是java的编译器，将java源码编译成字节码class文件。</p>
+<p>Jar：用于把一组class文件打包成jar文件。</p>
+<p>Javadoc：用于从java源码中提取注释并生成文档。</p>
+<p>Jdb：Java调试器，用于开发阶段的运行调试。</p>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>Java程序开发三步骤：写代码、编译代码、运行代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;    				      	  		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;            				System.out.println(<span class="string">&quot;Hello World!&quot;</span>);         &#125;    </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p><strong>编译java源文件</strong></p>
+<p>javac HelloWorld.java</p>
+<p>编译后发现当前目录下多了一个HelloWorld.class文件，该文件是java可运行的文件，称为字节码文件。</p>
+<h2 id="运行Java程序"><a href="#运行Java程序" class="headerlink" title="运行Java程序"></a>运行Java程序</h2><p>java HelloWorld</p>
+<h2 id="入门程序说明"><a href="#入门程序说明" class="headerlink" title="入门程序说明"></a>入门程序说明</h2><p>编译是将我们的java源文件翻译成jvm认识的class文件。</p>
+<p><strong>关于main方法</strong></p>
+<p>称为主方法，写法是固定的格式，main是程序的入口点。</p>
+<h2 id="注释Comment"><a href="#注释Comment" class="headerlink" title="注释Comment"></a>注释Comment</h2><p>单行注释：//开头，换行结尾</p>
+<p>多行注释：/*开头，以*/结束</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>解释：在程序中，Java已经定义好的单词，具有特殊含义</p>
+<p>在之前的案例中出现的关键词有，public、void、main、class等</p>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>解释：是指在程序中，我们自己定义的内容，比如类的名字、方法的名字、变量的名字，都是标识符。</p>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>解释：在Java程序中固定不变的数据</p>
+<p>整数常量、小数常量、字符常量、字符串常量、布尔常量、空常量</p>
+<p><strong>Demo练习</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConstanDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//输出整数常量</span></span><br><span class="line">		System.out.println(<span class="number">123</span>)</span><br><span class="line">        <span class="comment">//输出小数常量</span></span><br><span class="line">        System.out.println(<span class="number">3.14</span>)</span><br><span class="line">        <span class="comment">//输出字符常量</span></span><br><span class="line">        System.out.println(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line">		<span class="comment">//输出字符串常量</span></span><br><span class="line">        System.out.println(<span class="string">&#x27;这是一个test&#x27;</span>)</span><br><span class="line">		<span class="comment">//输出布尔常量</span></span><br><span class="line">        System.out.println(ture)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>解释：常量是固定不变的量，在程序中可以变化的量叫变量。</p>
+<p>Java中要求一个变量每次只能保存一个数据，必须要明确保存的数据类型。</p>
+<p>Java数据类型分类：</p>
+<blockquote>
+<p>基本数据类型：整数、浮点数、字符、布尔</p>
+<p>引用数据类型：类、数组、接口</p>
+</blockquote>
+<p>四类八种基本数据类型：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>关键字</th>
+<th>内存占用</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字节型</td>
+<td>byte</td>
+<td>1字节</td>
+<td></td>
+</tr>
+<tr>
+<td>整型</td>
+<td>int（默认）</td>
+<td>4字节</td>
+<td></td>
+</tr>
+<tr>
+<td>字符型</td>
+<td>char</td>
+<td>2字节</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Java中默认类型：整数int，浮点是double</p>
+<p>变量的定义：数据类型、变量名，变量值</p>
+<p>数据类型 变量名=数据值</p>
+<p><strong>练习Demo</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Variable</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">	<span class="comment">//定义字节变量</span></span><br><span class="line">    	<span class="keyword">byte</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="comment">//定义短整型变量</span></span><br><span class="line">        <span class="keyword">short</span> b = <span class="number">1000</span>;</span><br><span class="line">    <span class="comment">//定义整型变量</span></span><br><span class="line">        <span class="keyword">int</span> c = <span class="number">123456</span>;</span><br><span class="line">	<span class="comment">//定义长整型变量</span></span><br><span class="line">        <span class="keyword">long</span> d = <span class="number">123456789L</span>;</span><br><span class="line">	<span class="comment">//定义单精度浮点型变量</span></span><br><span class="line">        <span class="keyword">float</span> e = <span class="number">5.5f</span>;</span><br><span class="line">	<span class="comment">//定义双精度浮点型变量</span></span><br><span class="line">        <span class="keyword">double</span> f = <span class="number">8.8</span>;</span><br><span class="line">	<span class="comment">//定义布尔变量</span></span><br><span class="line">        <span class="keyword">boolean</span> bool = ture;</span><br><span class="line">	<span class="comment">//定义字符型变量</span></span><br><span class="line">        <span class="keyword">char</span> g = <span class="string">&#x27;test&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>long类型：建议数据后加L表示</p>
+<p>float类型：建议数据后加F表示</p>
+</blockquote>
+<p><strong>注意事项</strong></p>
+<p>变量名称：同一个大括号范围内，变量的名字不可以相同</p>
+<p>变量赋值：定义的变量，不赋值不能使用</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/01/29/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">VV</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
