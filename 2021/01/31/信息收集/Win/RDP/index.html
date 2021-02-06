@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="渗透测试、红蓝对抗">
     <meta name="description" content="Web安全、内网安全、二进制">
-    <meta name="author" content="VV">
+    <meta name="author" content="大刀">
     
     <title>
         
@@ -17,7 +17,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
-    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"EveryThing Will Be Fine."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"EveryThing Will Be Fine."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -85,14 +85,6 @@
                     
                         <li class="menu-item">
                             <a class=""
-                               href="/links"
-                            >
-                                LINKS
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
                                href="/about"
                             >
                                 ABOUT
@@ -142,11 +134,6 @@
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/links">LINKS</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
                        href="/about">ABOUT</a>
                 </li>
             
@@ -179,15 +166,15 @@
                 </div>
                 <div class="info">
                     <div class="author">
-                        <span class="name">VV</span>
+                        <span class="name">大刀</span>
                         
-                            <span class="author-label">Lv1</span>
+                            <span class="author-label">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-01-29 19:13:24
+        <i class="fas fa-edit"></i>&nbsp;2021-01-31 17:03:13
     </span>
     
     
@@ -208,17 +195,7 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="Java基础（二）"><a href="#Java基础（二）" class="headerlink" title="Java基础（二）"></a>Java基础（二）</h1><h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>程序要求参与的计算的数据，必须要保证数据类型的一致性，如果数据类型不一致将会发生类型的转换。</p>
-<h3 id="自动转换"><a href="#自动转换" class="headerlink" title="自动转换"></a>自动转换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 1;</span><br><span class="line">byte b &#x3D; 2;</span><br></pre></td></tr></table></figure>
-<p><strong>自动转换：将取值范围小的类型，自动提升为取值范围大的类型。</strong></p>
-<p><strong>转换规则：byte、short、char–&gt;int–&gt;long–&gt;float–&gt;double</strong></p>
-<h3 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h3><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><h2 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h2><p>解释：将一个功能抽取出来，把代码单独定义于一个大括号内，形成一个单独的功能。</p>
-<h3 id="方法的定义："><a href="#方法的定义：" class="headerlink" title="方法的定义："></a>方法的定义：</h3><p>修饰符 返回值类型 方法名 （参数列表）{</p>
-<p>​            代码…</p>
-<p>​            return;</p>
-<p>}</p>
-<h3 id="方法的调用："><a href="#方法的调用：" class="headerlink" title="方法的调用："></a>方法的调用：</h3><p>直接写方法的名称即可。</p>
-
+            
         </div>
 
         
@@ -229,7 +206,7 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/01/29/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/"
+                           href="/2021/01/31/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/Win/Browser/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
@@ -245,10 +222,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/29/Java%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/"
+                           href="/2021/01/31/markdown%E5%9F%BA%E7%A1%80/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-title-item">markdown基础</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -278,7 +255,7 @@
             
               <span>2021</span>&nbsp;-&nbsp;
             
-            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">VV</a>
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">大刀</a>
         </div>
         
             <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
